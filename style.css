@@ -1,0 +1,14 @@
+
+.geist {
+  font-family: "Geist", sans-serif;
+  
+}
+.active{
+    background-color: blue ;
+    border-radius: 5px;
+    color: white;
+    padding: 3px 6px;
+    width: 120px;
+    height: 40px;
+
+}

@@ -3,9 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login page</title>
+    <title>GitHub Issues Tracker</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <!-- font awsome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
 </head>
-<body>
- <p>Hello, World!</p>
+<body class="bg-gray-100 geist">
+    <header>
+     <div class="flex justify-between p-3">
+        <div>
+            <p class="text-2xl font-bold"><i class="fa-brands fa-github"></i> GitHub Issues Tracker</p>
+        </div>
+        <div class="flex gap-3 items-center">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" name="" id="" placeholder="Search issues..." class="p-2 rounded-lg">
+            <button type="button" class="bg-blue-800 rounded-md p-1 text-white">+New Issue</button>
+        </div>
+        
+     </div>
+    </header>
+
+    <section class="w-11/12 mx-auto gap-2 mt-4 mb-5 bg-white rounded-xl ">
+        <button type="button" class="text-gray-800 p-1 text-xl active">all</button>
+        <button type="button" class="text-gray-800 p-1 text-xl w-[120px] h-[40px] rounded-lg  border">open</button>
+        <button type="button" class="text-gray-800 p-1 text-xl w-[120px] h-[40px] rounded-lg  border ">closed</button>
+    </section>
+
+    <section class="w-11/12 mx-auto gap-2 mt-4 mb-5  bg-white rounded-xl">
+        <div class="flex justify-between items-center">
+            <div class="flex gap-1 items-center">
+            <img src="./B13-A5-Github-Issue-Tracker/assets/Aperture.png" alt="">
+            <div>
+            <p>50 Issues</p>
+            <p>Track and manage your project issues</p>
+            </div>
+            </div>
+            <div class="gap-2 grid grid-cols-2 items-center">
+                <div class="flex"><img src="./B13-A5-Github-Issue-Tracker/assets/Open-Status.png" alt="">
+                <p>open</p></div>
+                <div class="flex"><img src="./B13-A5-Github-Issue-Tracker/assets/Closed- Status .png" alt="">
+                <p>close</p></div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="w-11/12 mx-auto gap-2 mt-4 mb-5  bg-white rounded-xl">
+         <div id="card_container" class="grid grid-cols-4 gap-3  "></div>
+
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn" onclick="my_modal_5.showModal()">open modal</button>
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 class="text-lg font-bold">Hello!</h3>
+                <p class="py-4">Press ESC key or click the button below to close</p>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+    </section>
+
+
+    <script src="./script.js"></script>
+
 </body>
 </html>
