@@ -5,7 +5,7 @@ const user = document.getElementById("username");
 const pass = document.getElementById("password");
 const login = ()=>{
     if (user.value === "admin" && pass.value === "admin123") {
-        window.location.href = "index.html"
+        window.location.href = "main.html"
     }
     else{
         alert("invalid username pass")
