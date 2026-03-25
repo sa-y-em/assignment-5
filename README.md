@@ -1,6 +1,7 @@
 1️⃣ What is the difference between var, let, and const?
 
 => var :Can be re-declared and updated but if we declare later and call first it will give error
+
 let: Can not be re-declared but can be update and here we can declare anywhere and call from anywhere
 
 const: Can not be updated but can be re-declared and here we can declare anywhere and call from anywhere
