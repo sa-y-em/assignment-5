@@ -26,19 +26,20 @@
         <div>
             <p class="text-2xl font-bold"><i class="fa-brands fa-github"></i> GitHub Issues Tracker</p>
         </div>
-        <div class="flex gap-3 items-center">
+        <div class="flex  items-center">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" name="" id="" placeholder="Search issues..." class="p-2 rounded-lg">
-            <button type="button" class="bg-blue-800 rounded-md p-1 text-white">+New Issue</button>
+            <input type="text" name="" id="search" placeholder="Search issues..." class="p-2 rounded-lg">
+            <button type="button" id="searchBtn" class="bg-blue-800 rounded-md p-2 rounded-lg text-white">Search</button>
+            <button type="button" class="bg-blue-800 rounded-md p-1 text-white mx-2 ">+New Issue</button>
         </div>
         
      </div>
     </header>
 
     <section class="w-11/12 mx-auto gap-2 mt-4 mb-5 bg-white rounded-xl ">
-        <button type="button" class="text-gray-800 p-1 text-xl active">all</button>
-        <button type="button" class="text-gray-800 p-1 text-xl w-[120px] h-[40px] rounded-lg  border">open</button>
-        <button type="button" class="text-gray-800 p-1 text-xl w-[120px] h-[40px] rounded-lg  border ">closed</button>
+        <button type="button" class="text-gray-800 p-1 text-xl w-[120px] h-[40px] rounded-lg  border active status" id="all" onclick="filterIssues('all')" >all</button>
+        <button type="button" class="text-gray-800 p-1 text-xl w-[120px] h-[40px] rounded-lg  border status" id="open" onclick="filterIssues('open')">open</button>
+        <button type="button" class="text-gray-800 p-1 text-xl w-[120px] h-[40px] rounded-lg  border status" id="closed" onclick="filterIssues('closed')">closed</button>
     </section>
 
     <section class="w-11/12 mx-auto gap-2 mt-4 mb-5  bg-white rounded-xl">
@@ -46,7 +47,7 @@
             <div class="flex gap-1 items-center">
             <img src="./B13-A5-Github-Issue-Tracker/assets/Aperture.png" alt="">
             <div>
-            <p>50 Issues</p>
+            <p id="issueCount"> </p>
             <p>Track and manage your project issues</p>
             </div>
             </div>
@@ -59,16 +60,18 @@
 
         </div>
     </section>
+    <section class="w-11/12 mx-auto gap-2 mt-4 mb-5 justify-center align-center items-center flex hidden" id="loader">
+        <span class="loading loading-infinity loading-xl  "></span>
+    </section>
 
     <section class="w-11/12 mx-auto gap-2 mt-4 mb-5  bg-white rounded-xl">
-         <div id="card_container" class="grid grid-cols-4 gap-3  "></div>
+         <div id="card_container" class="grid grid-cols-4 gap-3  " ></div>
 
         <!-- Open the modal using ID.showModal() method -->
-        <button class="btn" onclick="my_modal_5.showModal()">open modal</button>
+       
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
             <div class="modal-box">
-                <h3 class="text-lg font-bold">Hello!</h3>
-                <p class="py-4">Press ESC key or click the button below to close</p>
+                <div id="modal_details"></div>
                 <div class="modal-action">
                     <form method="dialog">
                         <!-- if there is a button in form, it will close the modal -->
@@ -79,6 +82,9 @@
         </dialog>
 
     </section>
+
+
+
 
 
     <script src="./script.js"></script>
