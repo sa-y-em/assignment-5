@@ -32,7 +32,6 @@ const showLoader = (bool) => {
 const searchBtn = document.getElementById("searchBtn");
 searchBtn.addEventListener("click", () => {
     const search = document.getElementById("search").value.trim().toLowerCase();
-    console.log(search)
     const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
     showLoader(true)
     fetch(url)
